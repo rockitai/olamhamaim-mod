@@ -209,6 +209,17 @@ bdi{unicode-bidi:isolate}
 .vmeta span{color:var(--muted)}
 .vmeta span::before{content:"· "}
 .vc .key{color:var(--ink);font-size:19px;line-height:1.5;font-weight:500}
+section.ch.folded{padding:40px 0}
+.folded .lane>:not(.ch-head){display:none!important}
+.folded .ch-head{margin:0}
+.folded .ch-head>:not(.fold-btn){display:none}
+.fold-btn{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:56px;cursor:pointer;border-radius:16px}
+.fold-btn:focus-visible{outline:3px solid var(--sea);outline-offset:6px}
+.ch-head:has(.fold-btn){max-width:none}
+.fold-chev{flex:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:transform .25s}
+.fold-chev .ic{width:22px;height:22px}
+.fold-btn[aria-expanded="true"] .fold-chev{transform:rotate(180deg)}
+.fold-btn:hover .fold-chev{border-color:var(--ink)}
 /* ---------- centers ---------- */
 .cen-top{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:40px;align-items:start;margin-bottom:40px}
 @media (max-width:760px){.cen-top{grid-template-columns:1fr}}
@@ -433,8 +444,8 @@ dialog.tm-dlg::backdrop{background:rgba(10,24,40,.6)}
 </div>
 
 </section>
-<section class="ch team wflow wflow-team" id="team"><div class="lane">
-<div class="ch-head"><span class="ch-word">הצוות שלנו</span><p>צוות מטפלים מוסמך ומנוסה שילווה אתכם במסירות, במקצועיות וברגישות רבה. מתוך הקשבה ויצירת קשר אישי וביטחון, נבנה יחד איתכם תהליך שיקומי מדויק.</p></div>
+<section class="folded ch team wflow wflow-team" id="team"><div class="lane">
+<div class="ch-head"><button type="button" class="fold-btn" aria-expanded="false" aria-controls="team"><span class="ch-word">הצוות שלנו</span><span class="fold-chev" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><p>צוות מטפלים מוסמך ומנוסה שילווה אתכם במסירות, במקצועיות וברגישות רבה. מתוך הקשבה ויצירת קשר אישי וביטחון, נבנה יחד איתכם תהליך שיקומי מדויק.</p></div>
 <div class="br-filter" data-target="team" role="group" aria-label="סינון לפי סניף"><button type="button" class="bf-btn" data-branch="all" aria-pressed="true">הכל</button><button type="button" class="bf-btn" data-branch="netanya" aria-pressed="false">נתניה</button><button type="button" class="bf-btn" data-branch="ramat-hasharon" aria-pressed="false">רמת השרון</button><button type="button" class="bf-btn" data-branch="kiryat-ono" aria-pressed="false">קריית אונו</button><button type="button" class="bf-btn" data-branch="ramat-efal" aria-pressed="false">רמת אפעל</button></div>
 <p class="bf-empty" hidden>בקרוב יעלו כאן המטפלים מסניף <span class="bf-name"></span>.</p>
 <div class="cards tm-grid">
@@ -867,8 +878,8 @@ dialog.tm-dlg::backdrop{background:rgba(10,24,40,.6)}
 
 <div class="joining"><h3>מצטרפים בקרוב לצוות</h3><ul><li><b>אפרת גלברט</b> · רמת אפעל</li><li><b>אריקה</b> · רמת השרון</li></ul></div>
 </div></section>
-<section class="ch voices" id="voices"><div class="lane">
-<div class="ch-head"><span class="ch-word">מטופלים משתפים</span><p>מילים מהלב – על שינוי, הקלה, ריפוי והחלמה. מאחורי כל מטופל ומטופלת ישנו סיפור אישי של התמודדות, גיוס כוחות נפשיים ופיזיים, לעיתים עולים קשיים לאורך הדרך אך התקדמות, השיקום הנפשי והפיזי תמיד עומד מול עינינו וביחד מוצאים את הכוחות להמשיך.</p></div>
+<section class="folded ch voices" id="voices"><div class="lane">
+<div class="ch-head"><button type="button" class="fold-btn" aria-expanded="false" aria-controls="voices"><span class="ch-word">מטופלים משתפים</span><span class="fold-chev" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button><p>מילים מהלב – על שינוי, הקלה, ריפוי והחלמה. מאחורי כל מטופל ומטופלת ישנו סיפור אישי של התמודדות, גיוס כוחות נפשיים ופיזיים, לעיתים עולים קשיים לאורך הדרך אך התקדמות, השיקום הנפשי והפיזי תמיד עומד מול עינינו וביחד מוצאים את הכוחות להמשיך.</p></div>
 <div class="br-filter" data-target="voices" role="group" aria-label="סינון לפי סניף"><button type="button" class="bf-btn" data-branch="all" aria-pressed="true">הכל</button><button type="button" class="bf-btn" data-branch="netanya" aria-pressed="false">נתניה</button><button type="button" class="bf-btn" data-branch="ramat-hasharon" aria-pressed="false">רמת השרון</button><button type="button" class="bf-btn" data-branch="kiryat-ono" aria-pressed="false">קריית אונו</button><button type="button" class="bf-btn" data-branch="ramat-efal" aria-pressed="false">רמת אפעל</button></div>
 <p class="bf-empty" hidden>בקרוב יעלו כאן השיתופים מסניף <span class="bf-name"></span>.</p>
 <div class="cards tm-grid vc-grid">
@@ -1130,5 +1141,10 @@ if(location.hash){var h=document.getElementById(location.hash.slice(1));if(h)set
 </script>
 
 
+<script>(function(){function set(s,o){s.classList.toggle('folded',!o);var b=s.querySelector('.fold-btn');if(b)b.setAttribute('aria-expanded',o?'true':'false');}
+document.querySelectorAll('.fold-btn').forEach(function(b){var s=b.closest('section');b.addEventListener('click',function(){set(s,s.classList.contains('folded'));});});
+function fromHash(id){var s=document.getElementById(id);if(s&&s.querySelector('.fold-btn'))set(s,true);}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(a)fromHash(a.getAttribute('href').slice(1));},true);
+if(location.hash)fromHash(location.hash.slice(1));})();</script>
 </body>
 </html>
